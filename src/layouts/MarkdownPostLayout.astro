@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BlogNavigation from "../components/BlogNavigation.astro";
 const { frontmatter } = Astro.props;
 ---
 
@@ -9,4 +10,5 @@ const { frontmatter } = Astro.props;
   <p>Written by {frontmatter.author}</p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
   <slot />
+	<BlogNavigation />
 </BaseLayout>
