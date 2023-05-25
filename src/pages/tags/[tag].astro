@@ -5,6 +5,7 @@ import BlogPost from "../../components/BlogPost.astro";
 // ページルートの HTML テンプレートで情報を受け取るには、getStaticPaths()の外側に 記述します。
 export async function getStaticPaths() {// getStaticPaths関数はページ ルートの配列を返し、それらのルートにあるすべてのページはファイルで定義されている同じテンプレートを使用します
   const allPosts = await Astro.glob('../posts/*.md');
+	const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 	const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
 	// Markdown 投稿を 1 つずつ調べて、タグの各配列を1つの大きな配列に結合します
 	// Set 次に、見つかったすべての個々のタグから新しいタグを作成します(繰り返し値を無視するため)
