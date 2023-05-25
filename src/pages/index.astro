@@ -1,8 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Greeting from '../components/Greeting.jsx';
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <!-- client:load = ページの読み込み時にJavaScript をクライアントに送信して再実行するように指示 -->
+  <!-- <Greeting client:visible messages={["Hej", "Hallo", "Hola", "Habari"]} /> -->
+  <!-- client:visible = コンポーネントがページに表示されている場合にのみ、コンポーネントの JavaScript が送信されます。 -->
 </BaseLayout>
+<!-- 
+次の各コンポーネントについて、ブラウザに送信される内容を特定します。
+1.<ReactCounter client:load/>
+HTML、CSS、JavaScript
+
+2.<SvelteCard />
+HTMLとCSSのみ 
+
+入力に応答する場合は、client:ディレクティブがある
+-->
