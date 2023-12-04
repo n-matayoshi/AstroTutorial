@@ -13,6 +13,7 @@
     "@astrojs/preact": "^2.2.0",
     "@astrojs/rss": "^2.4.3",
     "astro": "^2.4.1",
+    "microcms-js-sdk": "^2.7.0",
     "preact": "^10.15.0"
   }
 }
